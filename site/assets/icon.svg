@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="MITHOS">
+  <rect width="1024" height="1024" fill="#0d0d0d"/>
+  <!-- Hexagon (pointy-top) -->
+  <polygon points="512,40 920.7,276 920.7,748 512,984 103.3,748 103.3,276" fill="#d0d0d0"/>
+  <!-- M negative-space blades -->
+  <g fill="#0d0d0d">
+    <polygon points="210,415 345,468 510,868 180,700 180,470"/>
+    <polygon points="814,415 679,468 514,868 844,700 844,470"/>
+  </g>
+</svg>
