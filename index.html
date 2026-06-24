@@ -58,7 +58,8 @@
   .btn svg { width: 16px; height: 16px; }
   .more { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); display: inline-flex; gap: 8px; align-items: center; }
   .more:hover { color: var(--text); }
-  .more span { transition: transform .15s; }
+  .more span { transition: transform .15s; display: inline-flex; }
+  .more span svg { width: 14px; height: 14px; display: block; }
   .more:hover span { transform: translateX(4px); }
 
   /* ── Placeholders ────────────────────────────── */
@@ -324,7 +325,7 @@
           <span class="label">Why MITHOS</span>
           <h2 class="display">A different kind of DM screen</h2>
         </div>
-        <a class="more" href="#get">Get started <span>→</span></a>
+        <a class="more" href="#get">Get started <span><svg viewBox="0 -960 960 960" fill="currentColor"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></span></a>
       </div>
       <div class="svc">
         <div class="col"><div class="n">01.</div><h3>No subscriptions</h3><p>A one-time purchase on Steam — no accounts, no monthly fees, no paywalls.</p></div>
