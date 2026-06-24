@@ -1,9 +1,9 @@
-# MITHOS — landing site
+# MITHOS landing site
 
 A simple, self-contained static landing page for MITHOS.
 
-- `index.html` — the whole page (HTML + inline CSS, no build step, no dependencies).
-- `assets/` — logo and icon.
+- `index.html` - the whole page (HTML + inline CSS, no build step, no dependencies).
+- `assets/` - logo and icon.
 
 ## View it
 

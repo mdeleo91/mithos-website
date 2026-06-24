@@ -15,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet" />
 
 <style>
-  /* ── App palette (default "dark" theme) ───────── */
   :root {
     --bg:      #191919;
     --bg-2:    #202020;
@@ -46,7 +45,6 @@
   .kicker .line { width: 54px; height: 2px; background: var(--white); display: inline-block; }
   .label { font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
 
-  /* ── Buttons ─────────────────────────────────── */
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: var(--radius);
          font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
          border: 1px solid var(--border); cursor: pointer; transition: background .15s, border-color .15s, color .15s, transform .12s; }
@@ -62,14 +60,12 @@
   .more span svg { width: 14px; height: 14px; display: block; }
   .more:hover span { transform: translateX(4px); }
 
-  /* ── Placeholders ────────────────────────────── */
   .ph { background: repeating-linear-gradient(45deg, #232323, #232323 12px, #1f1f1f 12px, #1f1f1f 24px);
         border: 1px dashed var(--border); border-radius: var(--radius);
         display: flex; align-items: center; justify-content: center; text-align: center;
         color: var(--muted); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
   .ph span { padding: 14px; max-width: 84%; line-height: 1.5; }
 
-  /* ── Nav ─────────────────────────────────────── */
   .nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between;
          padding: 18px 32px; background: rgba(25,25,25,0.82); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
   .nav-left { display: flex; align-items: center; gap: 18px; }
@@ -81,7 +77,6 @@
   .nav-icons a:hover { color: var(--white); transform: translateY(-2px); }
   .nav-icons svg { width: 20px; height: 20px; }
 
-  /* fullscreen overlay menu */
   .menu { position: fixed; inset: 0; z-index: 70; background: rgba(20,20,20,0.97); backdrop-filter: blur(8px);
           display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
           opacity: 0; pointer-events: none; transform: translateY(-12px); transition: opacity .25s, transform .25s; }
@@ -90,7 +85,6 @@
   .menu a:hover { color: var(--white); }
   .menu .close { position: absolute; top: 20px; right: 30px; background: none; border: none; color: var(--white); font-size: 34px; line-height: 1; cursor: pointer; }
 
-  /* ── Hero (overlapping composition) ──────────── */
   .hero { position: relative; display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto;
           min-height: calc(100vh - 61px); min-height: calc(100svh - 61px); padding: 8px 0 26px; }
   .hero-inner { position: relative; align-self: stretch; width: 100%; display: flex; align-items: center; padding-bottom: 6px; }
@@ -105,7 +99,6 @@
   .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
   .dots i.on { background: var(--white); width: 22px; border-radius: 6px; }
 
-  /* ── Feature cards (staggered/asymmetric) ────── */
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .cards .col-r { margin-top: 64px; }
   .fcard { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; transition: border-color .15s, transform .15s; }
@@ -117,11 +110,9 @@
   .fcard p { color: var(--muted); font-size: 13.5px; margin-bottom: 18px; }
   .fcard .note { font-size: 11px; color: var(--muted); margin-top: 16px; letter-spacing: 0.04em; }
 
-  /* ── Section scaffolding ─────────────────────── */
   section { padding: clamp(64px, 9vh, 104px) 0; }
   .center { text-align: center; }
 
-  /* ── About + play ────────────────────────────── */
   .about { text-align: center; }
   .about .label { display: inline-flex; margin-bottom: 18px; }
   .about h2 { font-size: clamp(22px, 3.4vw, 34px); max-width: 16ch; margin: 0 auto 22px; }
@@ -133,12 +124,10 @@
   .play svg { width: 20px; height: 20px; margin-left: 3px; color: var(--white); }
   .playrow span.t { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
-  /* ── Text band ───────────────────────────────── */
   .band { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .band .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
   .band p { color: var(--muted); font-size: 14px; }
 
-  /* ── Numbered services ───────────────────────── */
   .svc-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 44px; flex-wrap: wrap; }
   .svc-head h2 { font-size: clamp(22px, 3.4vw, 34px); max-width: 14ch; }
   .svc-head .label { display: block; margin-bottom: 14px; }
@@ -148,7 +137,6 @@
   .svc h3 { font-size: 16px; margin-bottom: 10px; }
   .svc p { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; }
 
-  /* ── Process / video band ────────────────────── */
   .video .stage { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; }
   .video .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
                     background: rgba(0,0,0,0.35); text-align: center; padding: 24px; }
@@ -156,7 +144,6 @@
   .video .overlay .play { background: var(--white); border-color: var(--white); }
   .video .overlay .play svg { color: #111; }
 
-  /* ── Portfolio / screenshots ─────────────────── */
   .pf-head { margin-bottom: 28px; }
   .pf-head .label { display: block; margin-bottom: 14px; }
   .pf-head h2 { font-size: clamp(22px, 3.4vw, 34px); max-width: 18ch; }
@@ -172,7 +159,6 @@
   .pf .cap b { display: block; color: var(--white); font-size: 14px; }
   .pf .cap span { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 
-  /* ── Contact / CTA ───────────────────────────── */
   .contact { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
   .contact .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
   .contact .label { display: inline-flex; margin-bottom: 16px; }
@@ -180,7 +166,6 @@
   .contact .actions { display: flex; gap: 14px; flex-wrap: wrap; }
   .contact .ph { aspect-ratio: 16 / 9; }
 
-  /* ── Footer ──────────────────────────────────── */
   footer { background: var(--bg); }
   .foot { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
   .foot .brand img { height: 22px; margin-bottom: 16px; }
@@ -215,7 +200,6 @@
 </head>
 <body>
 
-  <!-- Nav -->
   <nav class="nav">
     <div class="nav-left">
       <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -240,7 +224,6 @@
     <a href="https://discord.gg/aGAE4GYRXN" target="_blank" rel="noopener">Discord</a>
   </div>
 
-  <!-- Hero -->
   <header class="hero" id="top">
     <div class="wrap hero-inner">
       <div class="hero-copy">
@@ -255,17 +238,16 @@
           </a>
         </div>
       </div>
-      <div class="hero-shot ph"><span>Hero screenshot: full MITHOS dashboard (combat tracker + an open sheet) · 1600 × 1200 px (fills panel)</span></div>
+      <div class="hero-shot ph"><span>Hero screenshot: full MITHOS dashboard (combat tracker + an open sheet), 1600x1200px (fills panel)</span></div>
     </div>
     <div class="wrap"><div class="dots"><i class="on"></i><i></i><i></i></div></div>
   </header>
 
-  <!-- Feature cards (staggered) -->
   <section id="features">
     <div class="wrap cards">
       <div class="col-l">
         <div class="fcard">
-          <div class="ph"><span>Combat Tracker screenshot · 1080 × 720 px · 3:2</span></div>
+          <div class="ph"><span>Combat Tracker screenshot, 1080x720px, 3:2</span></div>
           <div class="body">
             <span class="label">Run encounters</span>
             <h3>Combat Tracker</h3>
@@ -273,7 +255,7 @@
           </div>
         </div>
         <div class="fcard">
-          <div class="ph"><span>NPC &amp; Bestiary screenshot · 1080 × 720 px · 3:2</span></div>
+          <div class="ph"><span>NPC &amp; Bestiary screenshot, 1080x720px, 3:2</span></div>
           <div class="body">
             <span class="label">Your cast</span>
             <h3>NPC Library &amp; Bestiary</h3>
@@ -283,7 +265,7 @@
       </div>
       <div class="col-r">
         <div class="fcard">
-          <div class="ph"><span>Sheet Builder screenshot · 1080 × 720 px · 3:2</span></div>
+          <div class="ph"><span>Sheet Builder screenshot, 1080x720px, 3:2</span></div>
           <div class="body">
             <span class="label">Make it yours</span>
             <h3>Sheet Builder</h3>
@@ -291,7 +273,7 @@
           </div>
         </div>
         <div class="fcard">
-          <div class="ph"><span>Map Display screenshot · 1080 × 720 px · 3:2</span></div>
+          <div class="ph"><span>Map Display screenshot, 1080x720px, 3:2</span></div>
           <div class="body">
             <span class="label">At the table</span>
             <h3>Maps &amp; Player Screens</h3>
@@ -302,7 +284,6 @@
     </div>
   </section>
 
-  <!-- About + play -->
   <section class="about">
     <div class="wrap">
       <span class="label">About MITHOS</span>
@@ -311,7 +292,6 @@
     </div>
   </section>
 
-  <!-- Why MITHOS (value props) -->
   <section id="why">
     <div class="wrap">
       <div class="svc-head">
@@ -330,11 +310,10 @@
     </div>
   </section>
 
-  <!-- Process / video -->
   <section id="watch">
     <div class="wrap video">
       <div class="stage ph">
-        <span>Trailer / walkthrough video thumbnail · 1920 × 1080 px · 16:9</span>
+        <span>Trailer / walkthrough video thumbnail, 1920x1080px, 16:9</span>
         <div class="overlay">
           <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           <h2 class="display">See it in action</h2>
@@ -343,7 +322,6 @@
     </div>
   </section>
 
-  <!-- Portfolio / screenshots -->
   <section id="screens">
     <div class="wrap">
       <div class="pf-head">
@@ -359,16 +337,15 @@
         </div>
       </div>
       <div class="pf">
-        <div class="shot wide" data-cat="av"><div class="ph"><span>Player Screen / Map · 1440 × 810 px · 16:9</span></div><div class="cap"><b>Player Screen</b><span>Audio Visual</span></div></div>
-        <div class="shot" data-cat="party"><div class="ph"><span>Party Manager · 720 × 540 px · 4:3</span></div><div class="cap"><b>Party Manager</b><span>Party Tools</span></div></div>
-        <div class="shot" data-cat="world"><div class="ph"><span>Markdown Notes · 720 × 540 px · 4:3</span></div><div class="cap"><b>Notes</b><span>World &amp; Time</span></div></div>
-        <div class="shot" data-cat="tables"><div class="ph"><span>Dice Roller · 720 × 540 px · 4:3</span></div><div class="cap"><b>Dice</b><span>Tables &amp; Contents</span></div></div>
-        <div class="shot" data-cat="npc"><div class="ph"><span>NPC &amp; Shop Generators · 720 × 540 px · 4:3</span></div><div class="cap"><b>Generators</b><span>NPC Management</span></div></div>
+        <div class="shot wide" data-cat="av"><div class="ph"><span>Player Screen / Map, 1440x810px, 16:9</span></div><div class="cap"><b>Player Screen</b><span>Audio Visual</span></div></div>
+        <div class="shot" data-cat="party"><div class="ph"><span>Party Manager, 720x540px, 4:3</span></div><div class="cap"><b>Party Manager</b><span>Party Tools</span></div></div>
+        <div class="shot" data-cat="world"><div class="ph"><span>Markdown Notes, 720x540px, 4:3</span></div><div class="cap"><b>Notes</b><span>World &amp; Time</span></div></div>
+        <div class="shot" data-cat="tables"><div class="ph"><span>Dice Roller, 720x540px, 4:3</span></div><div class="cap"><b>Dice</b><span>Tables &amp; Contents</span></div></div>
+        <div class="shot" data-cat="npc"><div class="ph"><span>NPC &amp; Shop Generators, 720x540px, 4:3</span></div><div class="cap"><b>Generators</b><span>NPC Management</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact / CTA -->
   <section class="contact" id="get">
     <div class="wrap grid">
       <div>
@@ -381,11 +358,10 @@
           </a>
         </div>
       </div>
-      <div class="ph"><span>Mood / lifestyle shot: app over a dark table, dice &amp; minis · 1280 × 720 px · 16:9</span></div>
+      <div class="ph"><span>Mood / lifestyle shot: app over a dark table, dice &amp; minis, 1280x720px, 16:9</span></div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="wrap">
       <div class="foot-bar">
@@ -397,7 +373,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Hamburger menu
     const menu = document.getElementById('menu');
     const openMenu = () => menu.classList.add('open');
     const closeMenu = () => menu.classList.remove('open');
@@ -405,7 +380,6 @@
     document.getElementById('menuClose').addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    // Screenshot filter tabs
     const tabs = document.querySelectorAll('.tabs button');
     const shots = document.querySelectorAll('.pf .shot');
     tabs.forEach(tab => tab.addEventListener('click', () => {
