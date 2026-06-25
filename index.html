@@ -94,7 +94,7 @@
   .hero h1 em { font-style: normal; color: var(--text); -webkit-text-stroke: 1.5px var(--white); }
   .hero p { color: var(--muted); font-size: 15px; max-width: 420px; margin-bottom: 28px; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-shot { position: absolute; top: 50%; right: 0; transform: translateY(-50%); height: 76%; width: 64%; z-index: 1; object-fit: cover; border-radius: var(--radius); box-shadow: -36px 34px 70px rgba(0,0,0,0.4); }
+  .hero-shot { position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: min(1280px, 50vw + 548px, 100vw - 48px); height: auto; aspect-ratio: 1280 / 720; z-index: 1; object-fit: cover; border-radius: var(--radius); box-shadow: -36px 34px 70px rgba(0,0,0,0.4); }
 
   section { padding: clamp(64px, 9vh, 104px) 0; }
   .center { text-align: center; }
