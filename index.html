@@ -94,7 +94,7 @@
   .hero h1 em { font-style: normal; color: var(--text); -webkit-text-stroke: 1.5px var(--white); }
   .hero p { color: var(--muted); font-size: 15px; max-width: 420px; margin-bottom: 28px; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-shot { position: absolute; top: 50%; right: 0; transform: translateY(-50%); height: 76%; width: 64%; z-index: 1; box-shadow: -36px 34px 70px rgba(0,0,0,0.4); }
+  .hero-shot { position: absolute; top: 50%; right: 0; transform: translateY(-50%); height: 76%; width: 64%; z-index: 1; object-fit: cover; border-radius: var(--radius); box-shadow: -36px 34px 70px rgba(0,0,0,0.4); }
 
   section { padding: clamp(64px, 9vh, 104px) 0; }
   .center { text-align: center; }
@@ -123,7 +123,9 @@
   .svc h3 { font-size: 16px; margin-bottom: 10px; }
   .svc p { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; }
 
-  .video .stage { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; }
+  .video .stage { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden;
+                  cursor: pointer; background: var(--bg-2) center/cover no-repeat; }
+  .video .stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
   .video .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
                     background: rgba(0,0,0,0.35); text-align: center; padding: 24px; }
   .video .overlay h2 { font-size: clamp(20px, 3vw, 30px); }
@@ -151,7 +153,6 @@
   .contact h2 { font-size: clamp(24px, 4vw, 40px); margin-bottom: 26px; }
   .contact .actions { display: flex; gap: 14px; flex-wrap: wrap; }
   .contact .ph { aspect-ratio: 16 / 9; }
-  .cta-img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); }
 
   footer { background: var(--bg); }
   .foot { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
@@ -222,7 +223,7 @@
           </a>
         </div>
       </div>
-      <div class="hero-shot ph"><span>(COMING SOON)</span></div>
+      <img class="hero-shot" src="assets/CTA.png" alt="MITHOS in action" />
     </div>
   </header>
 
@@ -254,11 +255,11 @@
 
   <section id="watch">
     <div class="wrap video">
-      <div class="stage ph">
+      <div class="stage" id="videoStage" role="button" tabindex="0" aria-label="Play the MITHOS trailer"
+           style="background-image: url('https://img.youtube.com/vi/wcc7-F8bliA/maxresdefault.jpg')">
         <div class="overlay">
           <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           <h2 class="display">See it in action</h2>
-          <span class="label">(Coming soon)</span>
         </div>
       </div>
     </div>
@@ -300,7 +301,7 @@
           </a>
         </div>
       </div>
-      <img class="cta-img" src="assets/CTA.png" alt="MITHOS in action" />
+      <div class="ph"><span>(COMING SOON)</span></div>
     </div>
   </section>
 
@@ -322,6 +323,12 @@
     document.getElementById('menuClose').addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    const videoStage = document.getElementById('videoStage');
+    const loadVideo = () => {
+      videoStage.innerHTML = '<iframe src="https://www.youtube.com/embed/wcc7-F8bliA?autoplay=1&rel=0" title="MITHOS trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    };
+    videoStage.addEventListener('click', loadVideo);
+    videoStage.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); } });
     const tabs = document.querySelectorAll('.tabs button');
     const shots = document.querySelectorAll('.pf .shot');
     tabs.forEach(tab => tab.addEventListener('click', () => {
